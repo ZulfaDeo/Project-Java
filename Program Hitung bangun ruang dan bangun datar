@@ -1,0 +1,266 @@
+package Pemdas;
+import java.util.Scanner;
+
+public class apphitung_bangunruang {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int pilihan;
+
+        do {
+            System.out.println("Pilih jenis perhitungan:");
+            System.out.println("1. Volume Bangun Ruang");
+            System.out.println("2. Luas Bangun Datar");
+            System.out.println("3. Luas Permukaan bangun ruang");
+            System.out.println("0. Keluar");
+            System.out.print("Masukkan pilihan: ");
+            pilihan = input.nextInt();
+
+            switch (pilihan) {
+                case 1:
+                    VolumeBangunRuang();
+                    break;
+                case 2:
+                    LuasBangunDatar();
+                    break;
+                case 3:
+                    LuasPBangunRuang();
+                    break;
+                case 0:
+                    System.out.println("Terima kasih!");
+                    break;
+                default:
+                    System.out.println("Pilihan tidak valid. Silakan pilih lagi.");
+            }
+        } while (pilihan != 0);
+    }
+
+
+    public static void VolumeBangunRuang() {
+        Scanner input = new Scanner(System.in);
+        int jenisBangunRuang;
+        System.out.println("=========================");
+        System.out.println("Pilih jenis bangun ruang:");
+        System.out.println("1. Balok");
+        System.out.println("2. Tabung");
+        System.out.println("3. Bola");
+        System.out.println("4. Kerucut");
+        System.out.print("Masukkan pilihan: ");
+        jenisBangunRuang = input.nextInt();
+        
+        switch (jenisBangunRuang) {
+            case 1:
+                VolumeBalok();
+                break;
+            case 2:
+                VolumeTabung();
+                break;
+            case 3:
+                VolumeBola();
+                break;
+            case 4:
+                VolumeKerucut();
+                break;
+            default:
+                System.out.println("Pilihan tidak valid.");
+        }
+    }
+    
+     public static void LuasPBangunRuang() {
+        Scanner input = new Scanner(System.in);
+        int jenisBangunRuang;
+        System.out.println("=========================");
+        System.out.println("Pilih jenis bangun ruang:");
+        System.out.println("1. Balok");
+        System.out.println("2. Kubus");
+        System.out.println("3. Tabung");
+        System.out.println("4. Bola");
+        System.out.println("5. Kerucut");
+        System.out.print("Masukkan pilihan: ");
+        jenisBangunRuang = input.nextInt();
+        
+        switch (jenisBangunRuang) {
+            case 1:
+                LuasBalok();
+                break;
+            case 2:
+                LuasKubus();
+                break;
+            case 3:
+                LuasTabung();
+                break;
+            case 4:
+                LuasBola();
+                break;
+            case 5:
+                LuasKerucut();
+                break;
+            default:
+                System.out.println("Pilihan tidak valid.");
+        }
+    }
+
+    public static void LuasBangunDatar() {
+        Scanner input = new Scanner(System.in);
+        int jenisBangunDatar;
+        System.out.println("=========================");
+        System.out.println("Pilih jenis bangun datar:");
+        System.out.println("1. Persegi");
+        System.out.println("2. Persegi Panjang");
+        System.out.println("3. Segitiga");
+        System.out.println("4. Lingkaran");
+        System.out.print("Masukkan pilihan: ");
+        jenisBangunDatar = input.nextInt();
+        
+        switch (jenisBangunDatar) {
+            case 1:
+                LuasPersegi();
+                break;
+            case 2:
+                LuasPersegiPanjang();
+                break;
+            case 3:
+                LuasSegitiga();
+                break;
+            case 4:
+                LuasLingkaran();
+                break;
+            default:
+                System.out.println("Pilihan tidak valid.");
+        }
+    }
+    //Note ini buat bangun datar coy//
+    public static void VolumeBalok() {
+        Scanner input = new Scanner(System.in);
+        System.out.print("Masukkan panjang balok: ");
+        double p = input.nextDouble();
+        System.out.print("Masukkan lebar balok: ");
+        double l = input.nextDouble();
+        System.out.print("Masukkan tinggi balok: ");
+        double t = input.nextDouble();
+        double volume = p * l * t;
+        System.out.println("Volume balok adalah: " + volume);
+        System.out.println("=========================");
+    }
+    
+    public static void VolumeTabung() {
+        Scanner input = new Scanner(System.in);
+        System.out.print("Masukkan jari-jari tabung: ");
+        double r = input.nextDouble();
+        System.out.print("Masukkan tinggi tabung: ");
+        double t = input.nextDouble();
+        double volume = Math.PI * r * r * t;
+        System.out.println("Volume tabung adalah: " + volume);
+        System.out.println("=========================");
+    }
+    
+     public static void VolumeBola() {
+        Scanner input = new Scanner(System.in);
+        System.out.print("Masukkan jari-jari bola: ");
+        double r = input.nextDouble();
+        double volume = (4.0 / 3.0) * Math.PI * r * r * r;
+        System.out.println("Volume bola adalah: " + volume);
+        System.out.println("=========================");
+    }
+     
+    public static void VolumeKerucut() {
+        Scanner input = new Scanner(System.in);
+        System.out.print("Masukkan jari-jari dasar kerucut: ");
+        double r = input.nextDouble();
+        System.out.print("Masukkan tinggi kerucut: ");
+        double t = input.nextDouble();
+        double volume = (1.0 / 3.0) * Math.PI * r * r * t;
+        System.out.println("Volume kerucut adalah: " + volume);
+        System.out.println("=========================");
+    }
+    //ini buat bangun ruang ya jangan salah//
+    public static void LuasPersegi() {
+        Scanner input = new Scanner(System.in);
+        System.out.print("Masukkan panjang sisi persegi: ");
+        double s = input.nextDouble();
+        double l = s * s;
+        System.out.println("Luas persegi adalah: " + l);
+        System.out.println("=========================");
+    }
+    
+    public static void LuasPersegiPanjang() {
+        Scanner input = new Scanner(System.in);
+        System.out.print("Masukkan panjang persegi panjang: ");
+        double p = input.nextDouble();
+        System.out.print("Masukkan lebar persegi panjang: ");
+        double l = input.nextDouble();
+        double L = p * l;
+        System.out.println("Luas persegi panjang adalah: " + L);
+        System.out.println("=========================");
+    }
+    
+
+     public static void LuasSegitiga() {
+        Scanner input = new Scanner(System.in);
+        System.out.print("Masukkan alas segitiga: ");
+        double a = input.nextDouble();
+        System.out.print("Masukkan tinggi segitiga: ");
+        double t = input.nextDouble();
+        double l = 0.5 * a * t;
+        System.out.println("Luas segitiga adalah: " + l);
+        System.out.println("=========================");
+    }
+     
+     public static void LuasLingkaran() {
+        Scanner input = new Scanner(System.in);
+        System.out.print("Masukkan jari-jari lingkaran: ");
+        double r = input.nextDouble();
+        double l = Math.PI * r * r;
+        System.out.println("Luas lingkaran adalah: " + l);
+        System.out.println("=========================");
+    }
+     
+    // Ini buat hitung luas permukaan bangun ruang coy// 
+     public static void LuasBalok() {
+        Scanner input = new Scanner(System.in);
+        System.out.print("Masukkan panjang balok: ");
+        double p = input.nextDouble();
+        System.out.print("Masukkan lebar balok: ");
+        double l = input.nextDouble();
+        System.out.print("Masukkan tinggi balok: ");
+        double t = input.nextDouble();
+        double luasPermukaan = 2 * ((p * l) + (p * t) + (l * t));
+        System.out.println("Luas permukaan balok adalah: " + luasPermukaan);
+        System.out.println("=========================");
+    }
+    public static void LuasKubus() {
+        Scanner input = new Scanner(System.in);
+        System.out.print("Masukkan sisi kubus: ");
+        double s = input.nextDouble();
+        double luasPermukaan = 6 * s * s;
+        System.out.println("Luas permukaan kubus adalah: " + luasPermukaan);
+        System.out.println("=========================");
+    }
+    public static void LuasTabung() {
+        Scanner input = new Scanner(System.in);
+        System.out.print("Masukkan jari-jari tabung: ");
+        double r = input.nextDouble();
+        System.out.print("Masukkan tinggi tabung: ");
+        double t = input.nextDouble();
+        double luasPermukaan = 2 * Math.PI * r * ( r + t);
+        System.out.println("Luas permukaan tabung adalah: " + luasPermukaan);
+        System.out.println("=========================");
+    }
+    public static void LuasBola() {
+        Scanner input = new Scanner(System.in);
+        System.out.print("Masukkan jari-jari bola: ");
+        double r = input.nextDouble();
+        double luasPermukaan = 4 * Math.PI * r * r;
+        System.out.println("Luas permukaan bola adalah: " + luasPermukaan);
+        System.out.println("=========================");
+    }  
+    public static void LuasKerucut() {
+        Scanner input = new Scanner(System.in);
+        System.out.print("Masukkan jari-jari kerucut: ");
+        double r = input.nextDouble();
+        System.out.print("Masukkan tinggi kerucut: ");
+        double t = input.nextDouble();
+        double luasPermukaan = Math.PI * r * (r + Math.sqrt(Math.pow(r + t, 2) + Math.pow(t, 2)));
+        System.out.println("Luas permukaan kerucut: " + luasPermukaan);
+        System.out.println("=========================");
+    }
+}
